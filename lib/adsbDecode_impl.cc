@@ -26,8 +26,10 @@ adsbDecode::sptr adsbDecode::make()
  */
 adsbDecode_impl::adsbDecode_impl()
     : gr::block(
-          "adsbDecode", gr::io_signature::make(0, 0, 0), gr::io_signature::make(0, 0, 0)),
-      outPort(pmt::mp("Output"))
+          "adsbDecode",
+            gr::io_signature::make(0, 0, 0),
+            gr::io_signature::make(0, 0, 0)),
+            outPort(pmt::mp("Output"))
 {
     message_port_register_out(outPort);
 

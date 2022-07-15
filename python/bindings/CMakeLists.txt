@@ -32,7 +32,7 @@ list(APPEND adsbTestBlocks_python_files
     adsbDemod_python.cc
     adsbDemodM_python.cc
     adsbDecode_python.cc
-    python_bindings.cc)
+    pointVec_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(adsbTestBlocks
    ../..
