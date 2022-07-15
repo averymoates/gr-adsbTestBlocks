@@ -24,6 +24,8 @@ private:
 
     void recievePackage(const pmt::pmt_t& msg);
 
+    float getBearing(float lat, float lon);
+
 public:
     pointVec_impl(float refLat, float refLon, int refAltitude);
     ~pointVec_impl();

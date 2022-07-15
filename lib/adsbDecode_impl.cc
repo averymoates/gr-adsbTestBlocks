@@ -247,45 +247,43 @@ void adsbDecode_impl::removeFromVector() { planes.erase(planes.begin()); }
 
 void adsbDecode_impl::displayVector()
 {
-    std::string info = "";
 
     for (int i = 0; i < planes.size(); ++i) {
+        
         if (planes[i].foundLatLon()) {
-            info += "\n";
+            std::string info = "";
             info += planes[i].getICAO();
-            info += "\n";
+            info += ",";
             info += std::to_string(planes[i].getAltitude());
 
             if (planes[i].canCalcLatLon()) {
 
-                info += "\nEven frame: ";
-                info += std::to_string(planes[i].getEvenLat());
-                info += ", ";
-                info += std::to_string(planes[i].getEvenLon());
-                info += "\nEven timestamp: ";
-                info += std::to_string(planes[i].getEvenTimestamp());
+                // info += "\nEven frame: ";
+                // info += std::to_string(planes[i].getEvenLat());
+                // info += ", ";
+                // info += std::to_string(planes[i].getEvenLon());
+                // info += "\nEven timestamp: ";
+                // info += std::to_string(planes[i].getEvenTimestamp());
 
-                info += "\nOdd frame: ";
-                info += std::to_string(planes[i].getOddLat());
-                info += ", ";
-                info += std::to_string(planes[i].getOddLon());
-                info += "\nOdd timestamp: ";
-                info += std::to_string(planes[i].getOddTimestamp());
+                // info += "\nOdd frame: ";
+                // info += std::to_string(planes[i].getOddLat());
+                // info += ", ";
+                // info += std::to_string(planes[i].getOddLon());
+                // info += "\nOdd timestamp: ";
+                // info += std::to_string(planes[i].getOddTimestamp());
 
-                info += "\n";
+                info += ",";
                 info += std::to_string(planes[i].getLatitude());
-                info += ", ";
+                info += ",";
                 info += std::to_string(planes[i].getLongitude());
-                info += "\n";
+                info += ",";
                 info += std::to_string(planes[i].getSpeed());
-                info += "\n";
             }
+            message_port_pub(outPort, pmt::mp(info));
+
         }
     }
 
-    info += "\n";
-
-    message_port_pub(outPort, pmt::mp(info));
 }
 
 void adsbDecode_impl::decode(char* package, int size, uint64_t timeStamp)

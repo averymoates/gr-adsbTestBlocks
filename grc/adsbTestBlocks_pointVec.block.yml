@@ -16,11 +16,11 @@ parameters:
 - id: refLat
   label: Current Latitude
   dtype: float
-  default: 0.0f
+  default: 0
 - id: refLon
   label: Current Longitude
   dtype: float
-  default: 0.0f
+  default: 0
 - id: refAltitude
   label: Current Altitude
   dtype: int
