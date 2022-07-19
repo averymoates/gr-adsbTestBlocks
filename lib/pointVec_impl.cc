@@ -53,7 +53,7 @@ float pointVec_impl::getBearing(float lat, float lon){
     float deltaLon = rlon - rrefLon;
     float y = sin(deltaLon)*cos(rlat);
     float x = cos(rrefLat)*sin(rlat)-sin(rrefLat)*cos(rlat)*cos(deltaLon);
-    float bearing = atan2(y,x)*(180.0f/M_PI) + 360.0f;
+    float bearing = atan2(y,x)*(180.0f/M_PI);
     return bearing;
 }
 
@@ -83,11 +83,34 @@ void pointVec_impl::recievePackage(const pmt::pmt_t& msg){
     
     if(hasBearing){
         std::string info = ICAO;
+
+        // info += "\nA = ";
+        // info += std::to_string(_refLat);
+        // info += ", ";
+        // info += std::to_string(_refLon);
+
+        // info += "\nB = ";
+        // info += std::to_string(lat);
+        // info += ", ";
+        // info += std::to_string(lon);
+
         info += "\nBearing :";
         info += std::to_string(bearing);
-    
+        info += "\n";
 
         message_port_pub(outPort, pmt::mp(info));
+
+        // pmt::pmt_t dict = pmt::make_dict();
+        // dict = pmt::dict_add(dict, pmt::mp("info"), pmt::mp(info));
+        // message_port_pub(outPort, pmt::cons(dict,pmt::make_c32vector(0,0)));
+
+        // ...
+        // json j;
+        // string key = pmt::dict_ref(...)
+        // string value p = pmt::dict_ref(...)
+        // j[key] = value;
+        // file << j;
+
     }
 
     

@@ -17,7 +17,8 @@ list(APPEND adsbTestBlocks_sources
     adsbDecode_impl.cc
     planeInfo.cc
     planeInfo.h
-    pointVec_impl.cc )
+    pointVec_impl.cc
+    pmtToFile_impl.cc )
 
 set(adsbTestBlocks_sources "${adsbTestBlocks_sources}" PARENT_SCOPE)
 if(NOT adsbTestBlocks_sources)

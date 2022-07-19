@@ -10,5 +10,6 @@ install(FILES
     adsbTestBlocks_adsbDemod.block.yml
     adsbTestBlocks_adsbDemodM.block.yml
     adsbTestBlocks_adsbDecode.block.yml
-    adsbTestBlocks_pointVec.block.yml DESTINATION share/gnuradio/grc/blocks
+    adsbTestBlocks_pointVec.block.yml
+    adsbTestBlocks_pmtToFile.block.yml DESTINATION share/gnuradio/grc/blocks
 )

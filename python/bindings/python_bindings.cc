@@ -26,6 +26,7 @@ namespace py = pybind11;
     void bind_adsbDemodM(py::module& m);
     void bind_adsbDecode(py::module& m);
     void bind_pointVec(py::module& m);
+    void bind_pmtToFile(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -59,5 +60,6 @@ PYBIND11_MODULE(adsbTestBlocks_python, m)
     bind_adsbDemodM(m);
     bind_adsbDecode(m);
     bind_pointVec(m);
+    bind_pmtToFile(m);
     // ) END BINDING_FUNCTION_CALLS
 }

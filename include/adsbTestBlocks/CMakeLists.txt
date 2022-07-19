@@ -15,5 +15,6 @@ install(FILES
     adsbDemod.h
     adsbDemodM.h
     adsbDecode.h
-    pointVec.h DESTINATION include/adsbTestBlocks
+    pointVec.h
+    pmtToFile.h DESTINATION include/adsbTestBlocks
 )
