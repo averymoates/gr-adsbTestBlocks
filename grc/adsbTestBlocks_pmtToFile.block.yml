@@ -4,7 +4,7 @@ category: '[adsbTestBlocks]'
 
 templates:
   imports: import adsbTestBlocks
-  make: adsbTestBlocks.pmtToFile(${filename})
+  make: adsbTestBlocks.pmtToFile(${filename}, ${test})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -16,6 +16,10 @@ parameters:
 - id: filename
   label: Filename
   dtype: file_save
+- id: test
+  label: Test
+  dtype: bool
+  default: True
 
 #  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
 #  Keys include:

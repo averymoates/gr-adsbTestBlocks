@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(pmtToFile.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(0d1efd090627bcf20724cdfee995a510)                     */
+/* BINDTOOL_HEADER_FILE_HASH(ae919aa13ad92a40c9b2a1bc37702208)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -37,6 +37,8 @@ void bind_pmtToFile(py::module& m)
         std::shared_ptr<pmtToFile>>(m, "pmtToFile", D(pmtToFile))
 
         .def(py::init(&pmtToFile::make),
+           py::arg("filename"),
+           py::arg("test"),
            D(pmtToFile,make)
         )
         

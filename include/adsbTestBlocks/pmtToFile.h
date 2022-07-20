@@ -32,7 +32,7 @@ public:
      * class. adsbTestBlocks::pmtToFile::make is the public interface for
      * creating new instances.
      */
-    static sptr make(std::string& filename);
+    static sptr make(std::string& filename, bool test);
 };
 
 } // namespace adsbTestBlocks

@@ -20,10 +20,12 @@ private:
     std::string _filename;
     std::ofstream _file;
 
+    bool _test;
+
     void writeToFile(const pmt::pmt_t& msg);
 
 public:
-    pmtToFile_impl(std::string& filename);
+    pmtToFile_impl(std::string& filename, bool test);
     ~pmtToFile_impl();
 };
 
